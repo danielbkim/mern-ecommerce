@@ -30,14 +30,25 @@ const Wrapper = styled.div`
     height: 100%;
 `;
 const Slide = styled.div`
+    height: 100vh;
+    width: 100vw;
     display: flex;
     align-items: center;
 `;
 const ImgContainer = styled.div`
-
+    height: 100%;
+    flex: 1;
 `;
+const Image = styled.img`
+    height: 80%;
+`
 const InfoContainer = styled.div`
+    height: 80%;
+    padding: 50px;
 `;
+const Title = styled.h1``
+const Description = styled.h1``
+const Button = styled.h1``
 
 const Slider = () => {
     return (
@@ -46,7 +57,9 @@ const Slider = () => {
                 <ArrowLeftOutlined />
             </Arrow>
             <Wrapper>
-                <ImgContainer></ImgContainer>
+                <ImgContainer>
+                    <Image src='https://images.unsplash.com/photo-1567721913486-6585f069b332?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'/>
+                </ImgContainer>
             </Wrapper>
             <Arrow direction="right">
                 <ArrowRightOutlined />
