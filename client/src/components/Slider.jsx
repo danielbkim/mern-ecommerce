@@ -28,6 +28,7 @@ const Arrow = styled.div`
 `;
 const Wrapper = styled.div`
     height: 100%;
+    display: flex;
 `;
 const Slide = styled.div`
     height: 100vh;
@@ -43,12 +44,24 @@ const Image = styled.img`
     height: 80%;
 `
 const InfoContainer = styled.div`
-    height: 80%;
     padding: 50px;
+    flex: 1;
 `;
-const Title = styled.h1``
-const Description = styled.h1``
-const Button = styled.h1``
+const Title = styled.h1`
+    font-size: 70px;
+`
+const Description = styled.p`
+    margin: 50px 0px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 3px;
+`
+const Button = styled.button`
+    padding: 10px;
+    font-size: 20px;
+    background-color: transparent;
+    cursor: pointer;
+`
 
 const Slider = () => {
     return (
@@ -56,11 +69,66 @@ const Slider = () => {
             <Arrow direction="left">
                 <ArrowLeftOutlined />
             </Arrow>
-            <Wrapper>
-                <ImgContainer>
-                    <Image src='https://images.unsplash.com/photo-1567721913486-6585f069b332?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'/>
-                </ImgContainer>
-            </Wrapper>
+            <Slide>
+                <Wrapper>
+                    <ImgContainer>
+                        <Image src='https://images.unsplash.com/photo-1567721913486-6585f069b332?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'/>
+                    </ImgContainer>
+                    <InfoContainer>
+                        <Title>SALE: PRODUCT 1</Title>
+                        <Description>Hello</Description>
+                        <Button>SHOP</Button>
+                    </InfoContainer>
+                </Wrapper>
+            </Slide>
+            <Slide>
+                <Wrapper>
+                    <ImgContainer>
+                        <Image src='https://images.unsplash.com/photo-1567721913486-6585f069b332?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'/>
+                    </ImgContainer>
+                    <InfoContainer>
+                        <Title>SALE: PRODUCT 1</Title>
+                        <Description>Hello</Description>
+                        <Button>SHOP</Button>
+                    </InfoContainer>
+                </Wrapper>
+            </Slide>
+            <Slide>
+                <Wrapper>
+                    <ImgContainer>
+                        <Image src='https://images.unsplash.com/photo-1567721913486-6585f069b332?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'/>
+                    </ImgContainer>
+                    <InfoContainer>
+                        <Title>SALE: PRODUCT 1</Title>
+                        <Description>Hello</Description>
+                        <Button>SHOP</Button>
+                    </InfoContainer>
+                </Wrapper>
+            </Slide>
+            <Slide>
+                <Wrapper>
+                    <ImgContainer>
+                        <Image src='https://images.unsplash.com/photo-1567721913486-6585f069b332?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'/>
+                    </ImgContainer>
+                    <InfoContainer>
+                        <Title>SALE: PRODUCT 1</Title>
+                        <Description>Hello</Description>
+                        <Button>SHOP</Button>
+                    </InfoContainer>
+                </Wrapper>
+            </Slide>
+            <Slide>
+                <Wrapper>
+                    <ImgContainer>
+                        <Image src='https://images.unsplash.com/photo-1567721913486-6585f069b332?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'/>
+                    </ImgContainer>
+                    <InfoContainer>
+                        <Title>SALE: PRODUCT 1</Title>
+                        <Description>Hello</Description>
+                        <Button>SHOP</Button>
+                    </InfoContainer>
+                </Wrapper>
+            </Slide>
             <Arrow direction="right">
                 <ArrowRightOutlined />
             </Arrow>
