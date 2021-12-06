@@ -32,7 +32,7 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
     height: 100%;
     display: flex;
-    transform: translateX(0vw);
+    transform: translateX(-200vw);
 `;
 const Slide = styled.div`
     height: 100vh;
@@ -71,7 +71,6 @@ const Button = styled.button`
 
 const Slider = () => {
     const [slideIndex, setSlideIndex] = useState(0);
-
     const handleClick = (direction) => {
 
     };
@@ -95,31 +94,6 @@ const Slider = () => {
                     </Slide>
                 )) }
                 </Wrapper>
-            {/* <Slide bg='lightgreen'>
-                <Wrapper>
-                    <ImgContainer>
-                        <Image src='https://images.unsplash.com/photo-1567721913486-6585f069b332?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'/>
-                    </ImgContainer>
-                    <InfoContainer>
-                        <Title>SALE: PRODUCT 2</Title>
-                        <Description>Whoa</Description>
-                        <Button>SHOP</Button>
-                    </InfoContainer>
-                </Wrapper>
-            </Slide>
-            <Slide>
-                <Wrapper>
-                    <ImgContainer>
-                        <Image src='https://images.unsplash.com/photo-1567721913486-6585f069b332?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'/>
-                    </ImgContainer>
-                    <InfoContainer>
-                        <Title>SALE: PRODUCT 1</Title>
-                        <Description>Hello</Description>
-                        <Button>SHOP</Button>
-                    </InfoContainer>
-                </Wrapper>
-            </Slide> */}
-
             <Arrow direction="right" onClick = {() => handleClick("right")}>
                 <ArrowRightOutlined />
             </Arrow>
