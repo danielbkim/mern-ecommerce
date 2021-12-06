@@ -32,7 +32,7 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
     height: 100%;
     display: flex;
-    transform: translateX(-200vw);
+    transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 const Slide = styled.div`
     height: 100vh;
@@ -47,6 +47,7 @@ const ImgContainer = styled.div`
 `;
 const Image = styled.img`
     height: 80%;
+    z-index: -1;
 `
 const InfoContainer = styled.div`
     padding: 50px;
@@ -72,7 +73,11 @@ const Button = styled.button`
 const Slider = () => {
     const [slideIndex, setSlideIndex] = useState(0);
     const handleClick = (direction) => {
-
+        if(direction === "left") {
+            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+        } else {
+            setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+        }
     };
 
     return (
@@ -80,7 +85,7 @@ const Slider = () => {
             <Arrow direction="left" onClick ={() => handleClick("left")}>
                 <ArrowLeftOutlined />
             </Arrow>
-                <Wrapper>
+                <Wrapper slideIndex={slideIndex}>
                 { products.map((item) => (
                     <Slide bg={item.bg}>
                         <ImgContainer>
