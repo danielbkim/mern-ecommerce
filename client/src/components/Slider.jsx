@@ -1,12 +1,15 @@
+import { useState } from "react"; 
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
 import styled from "styled-components";
+import { products } from "./slideData";
 
 const Container = styled.div`
     width: 100%;
-    display: flex;
     height: 100vh;
-    background-color: coral;
+    display: flex;
+    background-color: lightseagreen;
     position: relative;
+    overflow: hidden;
 `;
 const Arrow = styled.div`
     width: 50px;
@@ -29,12 +32,14 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
     height: 100%;
     display: flex;
+    transform: translateX(0vw);
 `;
 const Slide = styled.div`
     height: 100vh;
     width: 100vw;
     display: flex;
     align-items: center;
+    background-color: ${props => props.bg};
 `;
 const ImgContainer = styled.div`
     height: 100%;
@@ -60,23 +65,44 @@ const Button = styled.button`
     padding: 10px;
     font-size: 20px;
     background-color: transparent;
+    /* border-radius: px; */
     cursor: pointer;
 `
 
 const Slider = () => {
+    const [slideIndex, setSlideIndex] = useState(0);
+
+    const handleClick = (direction) => {
+
+    };
+
     return (
         <Container>
-            <Arrow direction="left">
+            <Arrow direction="left" onClick ={() => handleClick("left")}>
                 <ArrowLeftOutlined />
             </Arrow>
-            <Slide>
+                <Wrapper>
+                { products.map((item) => (
+                    <Slide bg={item.bg}>
+                        <ImgContainer>
+                            <Image src={item.img} />
+                        </ImgContainer>
+                        <InfoContainer>
+                            <Title>{item.title}</Title>
+                            <Description>{item.description}</Description>
+                            <Button>SHOP</Button>
+                        </InfoContainer>
+                    </Slide>
+                )) }
+                </Wrapper>
+            {/* <Slide bg='lightgreen'>
                 <Wrapper>
                     <ImgContainer>
                         <Image src='https://images.unsplash.com/photo-1567721913486-6585f069b332?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'/>
                     </ImgContainer>
                     <InfoContainer>
-                        <Title>SALE: PRODUCT 1</Title>
-                        <Description>Hello</Description>
+                        <Title>SALE: PRODUCT 2</Title>
+                        <Description>Whoa</Description>
                         <Button>SHOP</Button>
                     </InfoContainer>
                 </Wrapper>
@@ -92,44 +118,9 @@ const Slider = () => {
                         <Button>SHOP</Button>
                     </InfoContainer>
                 </Wrapper>
-            </Slide>
-            <Slide>
-                <Wrapper>
-                    <ImgContainer>
-                        <Image src='https://images.unsplash.com/photo-1567721913486-6585f069b332?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'/>
-                    </ImgContainer>
-                    <InfoContainer>
-                        <Title>SALE: PRODUCT 1</Title>
-                        <Description>Hello</Description>
-                        <Button>SHOP</Button>
-                    </InfoContainer>
-                </Wrapper>
-            </Slide>
-            <Slide>
-                <Wrapper>
-                    <ImgContainer>
-                        <Image src='https://images.unsplash.com/photo-1567721913486-6585f069b332?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'/>
-                    </ImgContainer>
-                    <InfoContainer>
-                        <Title>SALE: PRODUCT 1</Title>
-                        <Description>Hello</Description>
-                        <Button>SHOP</Button>
-                    </InfoContainer>
-                </Wrapper>
-            </Slide>
-            <Slide>
-                <Wrapper>
-                    <ImgContainer>
-                        <Image src='https://images.unsplash.com/photo-1567721913486-6585f069b332?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60'/>
-                    </ImgContainer>
-                    <InfoContainer>
-                        <Title>SALE: PRODUCT 1</Title>
-                        <Description>Hello</Description>
-                        <Button>SHOP</Button>
-                    </InfoContainer>
-                </Wrapper>
-            </Slide>
-            <Arrow direction="right">
+            </Slide> */}
+
+            <Arrow direction="right" onClick = {() => handleClick("right")}>
                 <ArrowRightOutlined />
             </Arrow>
         </Container>
