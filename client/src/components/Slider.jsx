@@ -28,11 +28,13 @@ const Arrow = styled.div`
     cursor: pointer;
     // change opacity levels on hover?
     opacity: 0.5;
+    z-index: 2;
 `;
 const Wrapper = styled.div`
     height: 100%;
     display: flex;
     transform: translateX(${(props) => props.slideIndex * -100}vw);
+    transition: all 1.5s ease;
 `;
 const Slide = styled.div`
     height: 100vh;
@@ -47,7 +49,6 @@ const ImgContainer = styled.div`
 `;
 const Image = styled.img`
     height: 80%;
-    z-index: -1;
 `
 const InfoContainer = styled.div`
     padding: 50px;
@@ -94,7 +95,7 @@ const Slider = () => {
                         <InfoContainer>
                             <Title>{item.title}</Title>
                             <Description>{item.description}</Description>
-                            <Button>SHOP</Button>
+                            <Button>See Now!</Button>
                         </InfoContainer>
                     </Slide>
                 )) }
